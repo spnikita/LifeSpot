@@ -59,7 +59,7 @@ header {
     }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     font-size: medium;
     color: dimgrey;

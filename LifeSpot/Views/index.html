@@ -12,17 +12,8 @@
 
     <!-- Внутренний скрипт с вызовами функций -->
     <script>
-        //let session = handleSession();
-        //sessionLog(session);
-
-        // Проверка на возраст
-        // checkAge();
-
-        // сохранение сессии
-        handleSession()
-
-        // вывод данных сессии в консоль
-        sessionLog();
+        // обработка сессии
+        handleSession(logger, checker /* Коллбек-функции */);
 
         const inputParseFunc = function () {
             return document.getElementsByTagName('input')[0].value;
