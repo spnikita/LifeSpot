@@ -1,4 +1,7 @@
-﻿/*
+﻿let slides = document.getElementsByClassName("slide");
+let currentSlide = 0;
+
+/*
 * Конструктор, через который создаётся комментарий
 *
 * */
@@ -121,4 +124,31 @@ function addLike(id) {
 
     // Обновим текст элемента
     element.innerText = array.join(' ')
+}
+
+/* --- Работа со слайдером --- */
+
+/* Обработчик кнопки 'назад' */
+document.getElementById("button-prev").addEventListener("click", () => {
+    changeSlide(currentSlide - 1)
+});
+
+/* Обработчик кнопки 'вперед' */
+document.getElementById("button-next").addEventListener("click", () => {
+    changeSlide(currentSlide + 1)
+});
+
+/* Сменить слайд */
+function changeSlide(moveTo) {
+    if (moveTo >= slides.length)
+        moveTo = 0;
+
+    if (moveTo < 0)
+        moveTo = slides.length - 1;
+
+    slides[currentSlide].classList.toggle("active");
+
+    slides[moveTo].classList.toggle("active");
+
+    currentSlide = moveTo;
 }
